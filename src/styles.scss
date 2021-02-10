@@ -37,6 +37,26 @@ a {
 }
 
 
+.hero-btn {
+    background: $primaryCyan;
+    border: transparent;
+    color: #ffffff;
+    padding: 1.2rem 2rem;
+    text-align: center;
+    border-radius: 20rem;
+    width: 70%;
+    text-transform: capitalize;
+    font-weight: 500;
+    font-size: 22px;
+    cursor: pointer;
+    transition: 0.3s all linear;
+
+    &:hover {
+        opacity: 0.8;
+    }
+}
+
+
 body {
     font-family: 'Poppins', sans-serif;
     font-size: 18px;
@@ -54,7 +74,7 @@ body {
     position: fixed;
     top: 0;
     left: 0%;
-    z-index: 999;
+    z-index: 100;
     overflow: hidden;
 
     .nav-center {
@@ -101,7 +121,7 @@ body {
                 background: $primaryCyan;
                 border-radius: 20rem;
                 color: #ffffff;
-                padding: 0.8rem 1.5rem;
+                padding: 0.6rem 1.5rem;
                 margin-left: 1rem;
 
                 &:hover {
@@ -147,10 +167,12 @@ body {
     padding: 2.5rem 1.5rem 2rem 1.5rem;
     text-align: center;
     width: 90vw;
-    margin: 0 auto;
     border-radius: 10px;
     transform: translateY(-200%);
     transition: 0.5s all linear;
+    z-index: 100;
+    position: fixed;
+    left: 5%;
 
 
     .side-links li {
@@ -196,4 +218,62 @@ body {
 
 .show-sidebar {
     transform: translateY(25%);
+}
+
+
+// hero
+
+.hero {
+    margin: 5rem 0;
+
+    &-img {
+        width: 550px;
+        margin-bottom: 3rem;
+        transform: translateX(5%);
+    }
+
+    &-content {
+        text-align: center;
+        padding: 0 1rem;
+
+        h1 {
+            font-size: 48px;
+            color: $primaryDarkViolet;
+            margin-bottom: 0.75rem;
+        }
+
+        h3 {
+            color: $neutralGrayViolet;
+            font-weight: 500;
+            margin-bottom: 2.5rem;
+        }
+    }
+
+}
+
+
+@media screen and (min-width:768px) {
+    .hero {
+        min-height: 70vh;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        place-items: center;
+        width: 94vw;
+        margin-left: auto;
+        margin-right: auto;
+
+        &-img {
+            order: 1;
+            width: 100%;
+            transform: translate(25%, 10%);
+        }
+
+        &-content {
+            text-align: left;
+
+            .hero-btn {
+                width: 200px;
+            }
+        }
+    }
 }
