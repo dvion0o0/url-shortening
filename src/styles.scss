@@ -307,6 +307,7 @@ body {
             font-size: 22px;
             font-weight: 700;
             color: $neutralGrayViolet;
+            width: 100%;
 
             &:focus {
                 border: 3px solid $primaryCyan;
@@ -369,7 +370,7 @@ body {
     text-align: center;
 
     .services-center {
-        width: 90vw;
+        width: 80vw;
         margin: 0 auto;
 
         h1 {
