@@ -225,6 +225,7 @@ body {
 
 .hero {
     margin: 5rem 0 0 0;
+    overflow-x: hidden;
 
     &-img {
         width: 550px;
@@ -329,6 +330,13 @@ body {
             }
         }
 
+        .error-input {
+            border: 2px solid $secondaryRed;
+        }
+
+        .error {
+            color: $secondaryRed;
+        }
     }
 }
 
@@ -344,6 +352,10 @@ body {
             background-repeat: no-repeat;
             background-size: cover;
             background-position: center;
+
+            .error {
+                text-align: left;
+            }
         }
     }
 
@@ -543,6 +555,7 @@ footer {
         background: #ffffff;
         padding: 1rem;
         border-radius: 10px;
+        margin-bottom: 1rem;
 
         h3 {
             font-weight: 500;

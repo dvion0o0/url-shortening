@@ -4,13 +4,20 @@ const AppContext = React.createContext();
 
 const apiUrl = "https://api.shrtco.de/v2/shorten?url=";
 
+const getLocalStorage = () => {
+  let result = localStorage.getItem("result");
+  if (result) {
+    return (result = JSON.parse(localStorage.getItem("result")));
+  } else {
+    return [];
+  }
+};
+
 const AppProvider = ({ children }) => {
-  const [value, setValue] = useState("m.com");
+  const [value, setValue] = useState("");
   const [show, SetShow] = useState(false);
-  const [result, setResult] = useState([]);
+  const [result, setResult] = useState(getLocalStorage());
   const [error, setError] = useState({ type: false, msg: "" });
-  console.log(error);
-  console.log(result);
   const toggle = () => {
     SetShow(!show);
   };
@@ -18,32 +25,43 @@ const AppProvider = ({ children }) => {
   const fetchResult = async () => {
     const response = await fetch(`${apiUrl}${value}`);
     const data = await response.json();
-    console.log(data);
     const { ok } = data;
-    const { short_link, original_link, code } = data.result;
-    setResult({
-      id: code,
-      link: short_link,
-      original: original_link,
-      status: ok,
-    });
-  };
 
-  useEffect(() => {
-    fetchResult();
-  }, []);
-
-  const handleSubmit = () => {
-    if (value === "") {
-      setError({ type: true, msg: "Please enter url" });
-    } else if (result.status === "false") {
-      setError({ type: true, msg: "Enter a valid url" });
-    } else {
+    if (ok === false) {
+      setError({ type: true, msg: "Invalid url" });
+    }
+    if (ok === true) {
+      setError({ type: false, msg: "" });
+      const { short_link, original_link, code } = data.result;
+      setResult([
+        ...result,
+        {
+          id: code,
+          link: short_link,
+          original: original_link,
+        },
+      ]);
+      setValue("");
     }
   };
 
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    if (value === "") {
+      setError({ type: true, msg: "Enter a Value" });
+    } else {
+      fetchResult();
+    }
+  };
+
+  useEffect(() => {
+    localStorage.setItem("result", JSON.stringify(result));
+  }, [result]);
+
   return (
-    <AppContext.Provider value={{ toggle, show }}>
+    <AppContext.Provider
+      value={{ toggle, show, handleSubmit, setValue, error, result, value }}
+    >
       {children}
     </AppContext.Provider>
   );
