@@ -353,7 +353,7 @@ body {
 
 .services {
     background: #F0F1F6;
-    padding: 10rem 2rem 6rem 2rem;
+    padding: 8rem 2rem 6rem 2rem;
     text-align: center;
 
     .section-center {
@@ -530,6 +530,74 @@ footer {
 
         .footer-logo {
             align-self: start;
+        }
+    }
+}
+
+// shorten
+
+.shorten {
+    margin-bottom: 5rem;
+
+    .shorten-card {
+        background: #ffffff;
+        padding: 1rem;
+        border-radius: 10px;
+
+        h3 {
+            font-weight: 500;
+            text-align: left;
+        }
+
+        .underline {
+            width: 100%;
+            height: 2px;
+            background: $neutralDarkViolet;
+            margin: 0.7rem 0;
+        }
+
+        .results {
+            display: grid;
+            gap: 1rem;
+
+            h3 {
+                color: $primaryCyan;
+                text-align: left;
+            }
+
+            button {
+                background: $primaryCyan;
+                padding: 0.8rem;
+                color: #ffffff;
+                border: transparent;
+                outline: transparent;
+                border-radius: 5px;
+                font-size: 22px;
+                font-weight: 500;
+                transition: 0.4s all linear;
+                cursor: pointer;
+
+                &:hover {
+                    background: $primaryDarkViolet;
+                }
+            }
+        }
+    }
+}
+
+@media screen and (min-width:768px) {
+    .shorten-card {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        align-items: center;
+
+        .underline {
+            display: none;
+        }
+
+        .results {
+            grid-template-columns: 1fr 1fr;
+            align-items: center;
         }
     }
 }

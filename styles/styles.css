@@ -305,7 +305,7 @@ body {
 
 .services {
   background: #F0F1F6;
-  padding: 10rem 2rem 6rem 2rem;
+  padding: 8rem 2rem 6rem 2rem;
   text-align: center;
 }
 
@@ -463,6 +463,70 @@ footer .footer-center .social-icons img {
   }
   .footer-center .footer-logo {
     align-self: start;
+  }
+}
+
+.shorten {
+  margin-bottom: 5rem;
+}
+
+.shorten .shorten-card {
+  background: #ffffff;
+  padding: 1rem;
+  border-radius: 10px;
+}
+
+.shorten .shorten-card h3 {
+  font-weight: 500;
+  text-align: left;
+}
+
+.shorten .shorten-card .underline {
+  width: 100%;
+  height: 2px;
+  background: #232127;
+  margin: 0.7rem 0;
+}
+
+.shorten .shorten-card .results {
+  display: grid;
+  gap: 1rem;
+}
+
+.shorten .shorten-card .results h3 {
+  color: #2acfcf;
+  text-align: left;
+}
+
+.shorten .shorten-card .results button {
+  background: #2acfcf;
+  padding: 0.8rem;
+  color: #ffffff;
+  border: transparent;
+  outline: transparent;
+  border-radius: 5px;
+  font-size: 22px;
+  font-weight: 500;
+  transition: 0.4s all linear;
+  cursor: pointer;
+}
+
+.shorten .shorten-card .results button:hover {
+  background: #3b3054;
+}
+
+@media screen and (min-width: 768px) {
+  .shorten-card {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+  }
+  .shorten-card .underline {
+    display: none;
+  }
+  .shorten-card .results {
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
   }
 }
 /*# sourceMappingURL=styles.css.map */

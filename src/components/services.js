@@ -3,11 +3,12 @@ import ServiceCard from "./serviceCard";
 import Brand from "../assets/icon-brand-recognition.svg";
 import Record from "../assets/icon-detailed-records.svg";
 import Fully from "../assets/icon-fully-customizable.svg";
-
+import Shorten from "./shorten";
 const services = () => {
   return (
     <section className="services">
       <div className="services-center">
+        <Shorten />
         <h1> Advanced Statistics </h1>
         <p>
           Track how your links are performomg across the web with our advanced

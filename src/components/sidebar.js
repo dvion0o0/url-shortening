@@ -3,7 +3,6 @@ import { AppContext } from "../contextapi/context";
 
 const Sidebar = () => {
   const { show } = React.useContext(AppContext);
-  console.log(show);
   return (
     <aside className={`${show ? "sidebar show-sidebar" : "sidebar"}`}>
       <ul className="side-links">
