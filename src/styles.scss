@@ -311,6 +311,10 @@ body {
             &:focus {
                 border: 3px solid $primaryCyan;
             }
+
+            &::placeholder {
+                color: $neutralGrayViolet;
+            }
         }
 
         &-btn {
@@ -328,10 +332,6 @@ body {
             &:hover {
                 opacity: 0.8;
             }
-        }
-
-        .error-input {
-            border: 2px solid $secondaryRed;
         }
 
         .error {
@@ -368,7 +368,7 @@ body {
     padding: 8rem 2rem 6rem 2rem;
     text-align: center;
 
-    .section-center {
+    .services-center {
         width: 90vw;
         margin: 0 auto;
 

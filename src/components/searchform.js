@@ -8,7 +8,7 @@ const SearchForm = () => {
       <form className="form">
         <input
           type="text"
-          className={`${error ? "form-input" : "form-input"}`}
+          className="form-input"
           placeholder="Shorten a link here ..."
           onChange={(e) => setValue(e.target.value)}
           value={value}

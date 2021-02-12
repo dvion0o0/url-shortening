@@ -48,7 +48,7 @@ const AppProvider = ({ children }) => {
   const handleSubmit = (e) => {
     e.preventDefault();
     if (value === "") {
-      setError({ type: true, msg: "Enter a Value" });
+      setError({ type: true, msg: "Please Enter a url" });
     } else {
       fetchResult();
     }
