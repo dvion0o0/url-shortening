@@ -3,6 +3,7 @@ import { AppContext } from "../contextapi/context";
 const Shorten = () => {
   const { result } = React.useContext(AppContext);
   const [alert, setAlert] = React.useState(false);
+  const [value, setValue] = React.useState(0);
   React.useEffect(() => {
     const timeout = setTimeout(() => {
       setAlert(false);
@@ -23,14 +24,13 @@ const Shorten = () => {
             <div className="results">
               <h3>{link}</h3>
               <button
-                key={index}
                 onClick={(e) => {
-                  console.log(e.currentTarget);
+                  setValue(index);
                   setAlert(true);
                   navigator.clipboard.writeText(link);
                 }}
               >
-                {alert ? "Copied!" : "Copy"}
+                {index === value && alert ? "Copied!" : "Copy"}
               </button>
             </div>
           </article>
